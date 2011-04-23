@@ -1,40 +1,72 @@
-SET UP GIT
-git@github.com:pseemang/
-				joseduc10
-_POST
+<?php
 
-generate random number here
+	$phrases = array(0 => 'yes', 1 => 'no');
+	
+	// string witty_comment;
+	// string result;
+	// string image;
+	function toss_coin($rand)
+	{
+		$rand = $rand%2;
+		if($rand == 0)
+			return 'head';
+		else
+			return 'tail';
+	}
+	
+	function throw_die($rand)
+	{
+		$rand = $rand%6;
+		return $rand+1;
+	}
+	
+	function shake_eightball($rand)
+	{
+		global $phrases;
+		$numPhrases = count($phrases);
 
-string witty_comment
-string result  = 0;
-string image
-switch ()
-{
-	case coin:
-		result = toss_coin();
-		image = coin.jpg;
-		break;
-	case die:
-		result = throw_die();
-		image = die.jpg;
-		break;
-	case dice:
-		result = throw_dice();
-		image = dice.jpg;
-		break;
-	case eightball:
-		result = shake_eightball();
-		image = eightball.jpg;
-		break;
-	default:
-		break;
-}
+		$rand = $rand%$numPhrases;
+		return $phrases[$rand];
+	}
+	
+	 switch ($_GET['choice'])
+	 {
+		 case "coin":
+			 echo " tis a coin! ";
+			 $result = toss_coin(rand());
+			 echo ' ' .$result;
+			// image = coin.jpg;
+			 break;
+		 case "die":
+			 echo " tis a die";
+			 $result = throw_die(rand());
+			 echo ' ' .$result;
+			// image = die.jpg;
+			 break;
+		 case "dice":
+			echo " tis a dice";
+			$result = throw_die(rand());
+			$result2 = throw_die(rand());
+			echo ' ' .$result .' ' .$result2;
+			// image = dice.jpg;
+			 break;
+		 case "eightball":
+			echo " tis a 8";
+			$result = shake_eightball(rand());
+			echo ' '.$result;
+			// image = eightball.jpg;
+			break;
+		 default:
+			 echo "fail";
+	 }
 
-witty_comment = comment;
+	// $witty_comment = comment;
 
-Functions returns strings
+?>
+ 
+    <!--Functions returns strings
 
-<p> Luck says: </p>
-echo "<img url + "$image+"/>"
-echo "<p>" + $result + "</p>"
-echo "<p>" + $witty_comment + "</p>"
+	// //Luck says: 
+	// //echo "<img url + "$image+"/>"
+	// //echo "<p> + $result + "</p>"
+	// //echo "<p>" + $witty_comment + "</p>" -->
