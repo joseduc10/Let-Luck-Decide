@@ -1,10 +1,18 @@
+<html>
+
+<head>
+<link rel="stylesheet" type="text/css" href="style.css" />
+</head>
+
+<body>
+<div id="main">
 <?php
 
-	$phrases = array(0 => 'yes', 1 => 'no');
+	$phrases = array(0 => 'yes', 
+					 1 => 'no');
 	
-	// string witty_comment;
-	// string result;
-	// string image;
+	
+	
 	function toss_coin($rand)
 	{
 		$rand = $rand%2;
@@ -29,44 +37,74 @@
 		return $phrases[$rand];
 	}
 	
+	function dice_picture($result)
+	{
+		switch ($result)
+		 {
+			 case "1":
+				echo "<img src='pics/face_1.bmp' width='50' height='50' />";
+				break;
+			 case "2":
+				echo "<img src='pics/face_2.bmp' width='50' height='50' />";	
+				break;
+			 case "3":
+				echo "<img src='pics/face_3.bmp' width='50' height='50' />";
+				break;
+			 case "4":
+				echo "<img src='pics/face_4.bmp' width='50' height='50' />";
+				break;
+			 case "5":
+				echo "<img src='pics/face_5.bmp' width='50' height='50' />";
+				break;
+			 case "6":
+				echo "<img src='pics/face_6.bmp' width='50' height='50' />";
+				break;
+		 }
+	}
+	
 	 switch ($_GET['choice'])
 	 {
 		 case "coin":
-			 echo " tis a coin! ";
+			 echo "Coin selected. </br>";
 			 $result = toss_coin(rand());
 			 echo ' ' .$result;
-			// image = coin.jpg;
+			 if($result == 'head')
+			 {
+				echo "<img src='pics/head.bmp' width='200' height='200' />";
+			 }
+			 else
+			 {
+				 echo "<img src='pics/tail.bmp' width='200' height='200' />";
+			 }
 			 break;
+			
 		 case "die":
-			 echo " tis a die";
+			 echo "Die selected. ";
 			 $result = throw_die(rand());
-			 echo ' ' .$result;
-			// image = die.jpg;
+			 dice_picture($result);
 			 break;
+			 
 		 case "dice":
-			echo " tis a dice";
-			$result = throw_die(rand());
-			$result2 = throw_die(rand());
-			echo ' ' .$result .' ' .$result2;
-			// image = dice.jpg;
+			 echo "Dice selected. ";
+			 $result = throw_die(rand());
+			 $result2 = throw_die(rand());
+			 dice_picture($result);
+			 dice_picture($result2);
 			 break;
+			 
 		 case "eightball":
-			echo " tis a 8";
-			$result = shake_eightball(rand());
-			echo ' '.$result;
-			// image = eightball.jpg;
-			break;
+			 echo "Eightball selected. ";
+			 $result = shake_eightball(rand());
+			 echo "<img src='pics/eight_ball.bmp' width='200' height='200' />";
+			 break;
+			
 		 default:
-			 echo "fail";
+			 echo "dumb noob, enter an option";
 	 }
 
 	// $witty_comment = comment;
-
 ?>
- 
-    <!--Functions returns strings
+</div>
+</body>
 
-	// //Luck says: 
-	// //echo "<img url + "$image+"/>"
-	// //echo "<p> + $result + "</p>"
-	// //echo "<p>" + $witty_comment + "</p>" -->
+</html>
