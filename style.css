@@ -1,0 +1,40 @@
+/*body
+{
+	background-image:url('LLD_background.jpg');
+	background-repeat:no-repeat;
+}*/
+
+#header
+{
+    text-align: center;
+    width: 500px;
+    border: solid 1px;
+	margin: 0 auto;
+}
+
+#main 
+{
+	height: 300px;
+	width: 500px;
+	margin: 20px auto;
+	padding: 0;
+    /*border: solid 1px;*/
+	background-image:url('LLD_background.jpg');
+	background-repeat:no-repeat;
+	background-size:cover;
+}
+
+#mainForm
+{
+    text-align:center;
+    /*border: solid 1px;*/
+    width:250px;
+    margin: auto;
+}
+/*html {
+        background: url(LLD_background.jpg) no-repeat center center fixed;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
+}*/
