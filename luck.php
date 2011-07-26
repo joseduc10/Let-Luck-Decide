@@ -6,6 +6,8 @@
 
 <body>
 <div id="main">
+<div id="mainForm">
+<img src="images/logo.png" alt="Let Luck Decide">
 <?php
 
 	$phrases = array(0 => 'yes', 
@@ -42,22 +44,22 @@
 		switch ($result)
 		 {
 			 case "1":
-				echo "<img src='pics/face_1.bmp' width='50' height='50' />";
+				echo "<img src='images/face_1.png' />";
 				break;
 			 case "2":
-				echo "<img src='pics/face_2.bmp' width='50' height='50' />";	
+				echo "<img src='images/face_2.png' />";	
 				break;
 			 case "3":
-				echo "<img src='pics/face_3.bmp' width='50' height='50' />";
+				echo "<img src='images/face_3.png' />";
 				break;
 			 case "4":
-				echo "<img src='pics/face_4.bmp' width='50' height='50' />";
+				echo "<img src='images/face_4.png' />";
 				break;
 			 case "5":
-				echo "<img src='pics/face_5.bmp' width='50' height='50' />";
+				echo "<img src='images/face_5.png' />";
 				break;
 			 case "6":
-				echo "<img src='pics/face_6.bmp' width='50' height='50' />";
+				echo "<img src='images/face_6.png' />";
 				break;
 		 }
 	}
@@ -70,11 +72,11 @@
 			 echo ' ' .$result;
 			 if($result == 'head')
 			 {
-				echo "<img src='pics/head.bmp' width='200' height='200' />";
+				echo "<img src='images/head.png' />";
 			 }
 			 else
 			 {
-				 echo "<img src='pics/tail.bmp' width='200' height='200' />";
+				 echo "<img src='images/tail.png' />";
 			 }
 			 break;
 			
@@ -95,15 +97,16 @@
 		 case "eightball":
 			 echo "Eightball selected. ";
 			 $result = shake_eightball(rand());
-			 echo "<img src='pics/eight_ball.bmp' width='200' height='200' />";
+			 echo "<img src='images/eight_ball.png'/>";
 			 break;
 			
 		 default:
-			 echo "dumb noob, enter an option";
+			 echo "noob, enter an option";
 	 }
 
 	// $witty_comment = comment;
 ?>
+</div>
 </div>
 </body>
 

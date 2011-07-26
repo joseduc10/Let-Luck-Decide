@@ -1,7 +1,11 @@
 /*body
 {
-	background-image:url('LLD_background.jpg');
+	background-image:url('/images/background.jpg');
 	background-repeat:no-repeat;
+	height: 300px;
+	width: 500px;
+	background-size:cover;
+	margin: 20px auto;
 }*/
 
 #header
@@ -12,16 +16,15 @@
 	margin: 0 auto;
 }
 
-#main 
+#main
 {
-	height: 300px;
-	width: 500px;
-	margin: 20px auto;
-	padding: 0;
-    /*border: solid 1px;*/
-	background-image:url('LLD_background.jpg');
+	
+    /*border: solid 1px; padding: 0;*/
+	background-image:url('images/background.jpg');
 	background-repeat:no-repeat;
-	background-size:cover;
+	background-position:center;
+	height: 290px;
+	
 }
 
 #mainForm
